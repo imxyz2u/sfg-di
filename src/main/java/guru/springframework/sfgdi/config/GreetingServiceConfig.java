@@ -4,7 +4,6 @@ import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
 import guru.springframework.sfgdi.repositories.EnglishGreetingsRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingsRepositoryImpl;
-import guru.springframework.sfgdi.services.ConstructorGreetingService;
 import guru.springframework.sfgdi.services.I18NSpanishService;
 import guru.springframework.sfgdi.services.I18nEnglishGreetingService;
 import guru.springframework.sfgdi.services.PrimaryGreetingService;
@@ -23,9 +22,9 @@ public class GreetingServiceConfig {
   //this type of configuration is used for third party jars to bring the objects in to spring context
   //  @Bean // it is defined in XML config file
   // adding bean annotation makes it a component
-  ConstructorGreetingService constructorGreetingService() { // this gives a method to get the instance
-    return new ConstructorGreetingService();
-  }
+  //  ConstructorGreetingService constructorGreetingService() { // this gives a method to get the instance
+  //    return new ConstructorGreetingService();
+  //  }
 
   @Bean
   PropertyInjectedGreetingService propertyInjectedGreetingService() {
