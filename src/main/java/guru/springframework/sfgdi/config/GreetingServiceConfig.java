@@ -12,14 +12,16 @@ import guru.springframework.sfgdi.services.PropertyInjectedGreetingService;
 import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
+@ImportResource("classpath:sdfdi-config.xml") // this can be imported in the main spring boot class as well
 @Configuration
 public class GreetingServiceConfig {
 
   //this type of configuration is used for third party jars to bring the objects in to spring context
-  @Bean
+  //  @Bean // it is defined in XML config file
   // adding bean annotation makes it a component
   ConstructorGreetingService constructorGreetingService() { // this gives a method to get the instance
     return new ConstructorGreetingService();
